@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: midnightblue;
+    background-color:#648ab0;
 }
 
 a {
@@ -40,7 +40,7 @@ a:hover {
     height: 400px;
     border: 2px solid white;
     border-radius: 20px;
-    background-color: darkslategrey;
+    background-color:#039dfc;
 }
 
 #login-container #login-form .login-form-group {
