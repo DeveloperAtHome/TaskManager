@@ -1,1 +1,1 @@
-alert('App works!');
+console.log('Application is loaded.');
