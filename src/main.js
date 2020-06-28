@@ -1,1 +1,1 @@
-console.log('Application is loaded.');
+console.log('Application is loaded!');
