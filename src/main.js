@@ -1,122 +1,95 @@
-class Login{
+class Login {
 
-constructor(){
+  user = {
+    username: undefined,
+    password: undefined
+  }
 
-this.user={
+  constructor() {
+    this.initApp();
+  }
 
-username:null,
-password:null
+  initApp = () => {
+    // get dashboard page element and hide that element
+    this.dashboardPageElement = document.getElementById('dashboard');
+    this.dashboardPageElement.style.display = 'none';
 
-}
+    // get spinner element and hide that element
+    this.loginSpinnerElement = document.getElementById('login-spinner');
+    this.loginSpinnerElement.style.display = 'none';
 
-this.initApp=function(){
+    // get username and password input elements
+    this.usernameInputElement = document.getElementById('login-username');
+    this.passwordInputElement = document.getElementById('login-password');
 
-this.isValidForm()
+    // get username and password validation text elements
+    this.usernameValidationTextElement = document.getElementById('username-validation-text');
+    this.passwordValidationTextElement = document.getElementById('password-validation-text');
 
-}
+    // add event handler for submit button
+    document.getElementById('sign-in-btn').addEventListener('click', this.onSignIn);
+  }
 
-}
+  isValidForm = () => {
 
-isValidForm(){
+    const usernameRegex = /[a-z\d]{5,8}/i;
+    const passwordRegex = /[a-z\d@\.-]{8,20}/i;
 
-  const testInput={
-
-    username:/[a-z\d]{5,8}/i,
-    password:/[a-z\d@\.-]{8,20}/
-    
+    let isValid = true;
+    // if username is not entered or if username is not in correct format
+    if (!this.user.username || !usernameRegex.test(this.user.username)) {
+      this.usernameValidationTextElement.innerText = 'Username must be between 5-8 characters';
+      isValid = false;
+    } else {
+      this.usernameValidationTextElement.innerText = '';
     }
 
+    // if password is not entered or if password is not in correct format
+    if (!this.user.password || !passwordRegex.test(this.user.password)) {
+      this.passwordValidationTextElement.innerText = 'Password must be between 8-20 characters';
+      isValid = false;
+    } else {
+      this.passwordValidationTextElement.innerText = '';
+    }
 
+    return isValid;
+  }
 
+  onSignIn = () => {
 
-let inputs=document.querySelectorAll('input');
+    this.user.username = this.usernameInputElement.value ? this.usernameInputElement.value.trim() : undefined;
+    this.user.password = this.passwordInputElement.value ? this.passwordInputElement.value.trim() : undefined;
 
-inputs.forEach(input=>{
+    const validationResult = this.isValidForm();
 
-input.addEventListener('keyup',(e)=>{
+    if (validationResult) {
+      if (this.login()) {
+        this.goToDashboard();
+      } else {
+        console.log('Login failed.');
+      }
+    }
 
-this.onSignIn(e.target,testInput[e.target.attributes.name.value])
+  }
 
-})
+  login = () => {
+    // fake login, later here will be whole logic for login (set token in storage, etc ...). 
+    return true;
+  }
 
-})
-
-
-}
-
-onSignIn(input,regex){
-
-  //jel moze ovaj parametar regex dole da se koristi posto bi on trebalo da sadrzi taj test iz gornje fn..
-
-let btn=document.querySelector('button');
-let inputUser=document.querySelector('#login-username');
-let inputPass=document.querySelector('#login-password');
-
-btn.addEventListener('click',()=>{
-
- 
-if(inputUser.value.trim()=="" && inputPass.value.trim()==""){
-
-inputUser.className='invalid'
-inputPass.className='invalid'
-
-}
-
-else if(inputUser.value.trim()=="" && !inputPass.value.trim()==""){
-
-inputUser.className="invalid"
-
-}
-
-else if(!inputUser.value.trim()=="" && inputPass.value.trim()==""){
-
-  inputPass.className="invalid"
-  
-}
-
-else if(regex.test(input.value)){
-
-
-    this.login(input,regex)
-    // this.dashboard() //treba da se napravi
+  goToDashboard = () => {
+    // hide login page
+    document.getElementById('login-container').style.display = 'none';
+    // show login spinner, and after 2sec show dashboard...
+    this.loginSpinnerElement.style.display = 'block';
+    setTimeout(() => {
+      // show dashboard page
+      this.dashboardPageElement.style.display = 'block';
+      // hide login spinner
+      this.loginSpinnerElement.style.display = 'none';
+    }, 2000);
+  }
 
 }
 
-
-})
-
-
-
-}
-
-login(input){
-
-//ubacuju se podaci u user objekat
-this.user[input.attributes.name.value]=input
-
-
-
-}
-
-dashboard(){
-
-
-//need to code
-
-}
-
-
-
-}
-
-
-const user1=new Login().initApp()
-
-
-
-
-
-
-
-
-
+new Login()
