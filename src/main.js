@@ -1,117 +1,119 @@
-class User{
+class Login{
 
-  constructor(){
-  
-  this.inputs=document.querySelectorAll('input');
+constructor(){
 
-  this.regex={
+this.user={
 
-    username:/^[a-z\d]{5,8}$/i,
-    password:/^[\w@-]{8,20}$/  
-  
-    }     
+username:null,
+password:null
 
-  
-  }
+}
+
+this.initApp=function(){
+
+this.isValidForm()
+
+}
+
+}
+
+isValidForm(){
+
+  const testInput={
+
+    username:/[a-z\d]{5,8}/i,
+    password:/[a-z\d@\.-]{8,20}/
+    
+    }
 
 
-info(){
 
-this.inputs.forEach(input=>{
+
+let inputs=document.querySelectorAll('input');
+
+inputs.forEach(input=>{
 
 input.addEventListener('keyup',(e)=>{
 
-
-  
-
-
-this.validator(e.target,this.regex[e.target.attributes.name.value]) 
-                               
-})
-
-
+this.onSignIn(e.target,testInput[e.target.attributes.name.value])
 
 })
 
+})
 
 
 }
 
+onSignIn(input,regex){
+
+  //jel moze ovaj parametar regex dole da se koristi posto bi on trebalo da sadrzi taj test iz gornje fn..
+
+let btn=document.querySelector('button');
+let inputUser=document.querySelector('#login-username');
+let inputPass=document.querySelector('#login-password');
+
+btn.addEventListener('click',()=>{
 
  
-validator(input,regex){
+if(inputUser.value.trim()=="" && inputPass.value.trim()==""){
 
-if(regex.test(input.value)){
-
-input.className='valid'
-
-
-
-}else{
-
-input.className='invalid'
+inputUser.className='invalid'
+inputPass.className='invalid'
 
 }
 
+else if(inputUser.value.trim()=="" && !inputPass.value.trim()==""){
 
-
-this.changePage()
-
+inputUser.className="invalid"
 
 }
 
+else if(!inputUser.value.trim()=="" && inputPass.value.trim()==""){
 
-
-
-changePage(){
-
-
-  let btn=document.querySelector('button')
+  inputPass.className="invalid"
   
+}
+
+else if(regex.test(input.value)){
 
 
-    btn.addEventListener('click',(e)=>{
+    this.login(input,regex)
+    // this.dashboard() //treba da se napravi
 
-      e.preventDefault();
-      
-      for(let i=0; i<this.inputs.length; i++){
-
-        if(this.inputs[i].classList.contains('invalid') || (this.inputs[i].value=="")){
-      
-         return false
-      
-        }
-        
-      
-        else if(this.inputs[i].classList.contains('valid') || (this.inputs[i].value=="")){
-      
-         return false
-      
-        }
-        
-      
-        else{
-      
-          document.querySelector('body').style.opacity="0"
-      
-        }
-      
-      
-        
-      }
-      
-
-    })
+}
 
 
-  
+})
+
 
 
 }
 
+login(input){
+
+//ubacuju se podaci u user objekat
+this.user[input.attributes.name.value]=input
+
+
+
 }
 
-const user1=new User().info();
+dashboard(){
+
+
+//need to code
+
+}
+
+
+
+}
+
+
+const user1=new Login().initApp()
+
+
+
 
 
 

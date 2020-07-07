@@ -40,7 +40,7 @@ a:hover {
     height: 400px;
     border: 2px solid white;
     border-radius: 20px;
-    background-color:#039dfc;
+    background-color:#061c11;
 }
 
 #login-container #login-form .login-form-group {
@@ -90,4 +90,28 @@ a:hover {
 #login-container #login-form .login-form-group span {
     margin-top: 10px;
     color: white;
+}
+
+.hide{
+
+opacity: 0;
+color:red;
+
+}
+
+
+/* .invalid{
+
+opacity:1;
+
+} */
+
+
+
+
+input.invalid+p{
+
+color:red;
+opacity:1;
+
 }
