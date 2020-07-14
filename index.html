@@ -4,13 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Task Manager</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/business-planning-set-2/64/x-22-256.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div id="login-container">
+
+<!--**** Login Page**** -->
+
+
+<!-- nece da radi hide class na ovaj div login-conatiner,vrv zbog nekog stack elementa,z-index ili nesto trece -->
+
+  <!-- <div id="login-container">
     <div id="login-info-text">
       <h1>Task Manager</h1>
       <p><i>Platform for managing project tasks.</i></p>
@@ -33,11 +40,67 @@
         <span><a href="#">Create an account.</a></span>
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+  <!-- *****Register page***** -->
+
+ <div class="register">
+
+ <h1>Sign Up</h1>
+ <p>It`s free and only takes a minute</p> 
+
+ <div class="registerFields">
+
+<div class="regFirstName">
+  <label for="">First Name</label>
+ <input type="text" name="regFirstName">
+</div>
+
+<div class="regLastName">
+  <label for="">Last Name</label>
+ <input type="text" name="regLastName">
+</div>
+
+<div class="regEmail">
+ <label for="email">Email</label> 
+<input type="text" name="email">
+</div>
+
+<div>
+<label for="phone">Mobile Number</label>
+<input type="text" name="phone">
+
+</div>
+
+
+<div class="regPassword">
+  <label for="password">Password</label>
+  <input type="password" name="password">
+</div>
+
+<div>
+  <label for="confirmPassword">Confirm Password</label>
+<input type="password" name="confirmPassword">  
+</div>
+
+</div> 
+
+<button class="regBtn">Sign Up</button>
+<p class="regText">Already have an account? <span><a href="#">login here</a></span></p>
+
+</div> 
+
+
+<!-- ****Dashboard page**** -->
+
 
   <div id="dashboard">
     Welcome to Dashboard!
   </div>
+
+
+<!-- *****Loading animations****** -->
 
   <div class="spinner" id="login-spinner">
     <div class="spinner-dot"></div>
@@ -49,6 +112,7 @@
   </div>
 
   <script src="src/main.js"></script>
+  <script src="src/register.js"></script>
 </body>
 
 </html>
