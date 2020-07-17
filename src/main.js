@@ -28,6 +28,7 @@ class Login {
 
     // add event handler for submit button
     document.getElementById('sign-in-btn').addEventListener('click', this.onSignIn);
+
   }
 
   isValidForm = () => {
