@@ -15,9 +15,7 @@
 <!--**** Login Page**** -->
 
 
-<!-- nece da radi hide class na ovaj div login-conatiner,vrv zbog nekog stack elementa,z-index ili nesto trece -->
-
-  <!-- <div id="login-container">
+  <div id="login-container" class="show">
     <div id="login-info-text">
       <h1>Task Manager</h1>
       <p><i>Platform for managing project tasks.</i></p>
@@ -40,48 +38,53 @@
         <span><a href="#">Create an account.</a></span>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
   <!-- *****Register page***** -->
 
- <div class="register">
+ <div class="register hide">
 
  <h1>Sign Up</h1>
  <p>It`s free and only takes a minute</p> 
 
  <div class="registerFields">
 
-<div class="regFirstName">
-  <label for="">First Name</label>
- <input type="text" name="regFirstName">
+<div >
+  <label for="regFirstName">First Name</label>
+ <input type="text" name="regFirstName" class="regFirstName" >
+ <p class="firstName-validation-text validation-error"></p>
 </div>
 
-<div class="regLastName">
-  <label for="">Last Name</label>
- <input type="text" name="regLastName">
+<div >
+  <label for="regLastName">Last Name</label>
+ <input type="text" name="regLastName" class="regLastName">
+ <p class="lastName-validation-text validation-error"></p>
 </div>
 
-<div class="regEmail">
+<div >
  <label for="email">Email</label> 
-<input type="text" name="email">
+<input type="text" name="email" class="regEmail">
+<p class="email-validation-text validation-error"></p>
 </div>
 
 <div>
-<label for="phone">Mobile Number</label>
-<input type="text" name="phone">
-
+<label for="mobileNumber">Mobile Number</label>
+<input type="text" name="mobileNumber" class="regMobileNumber">
+<p class="phone-validation-text validation-error"></p>
 </div>
 
 
-<div class="regPassword">
+<div >
   <label for="password">Password</label>
-  <input type="password" name="password">
+  <input type="password" name="password" class="regPassword">
+  <p class="register-password-validation validation-error"></p>
 </div>
 
 <div>
   <label for="confirmPassword">Confirm Password</label>
-<input type="password" name="confirmPassword">  
+<input type="password" name="confirmPassword" class="confirmPassword">  
+<p class="confirm-password-validation validation-error"></p>
 </div>
 
 </div> 
