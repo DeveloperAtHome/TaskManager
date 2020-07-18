@@ -1,110 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Task Manager</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/business-planning-set-2/64/x-22-256.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/business-planning-set-2/64/x-22-256.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  </head>
 
-    <body>
-        <!--**** Login Page**** -->
+  <body>
+    <!--**** Login Page**** -->
 
-        <div id="login-container" class="show">
-            <div id="login-info-text">
-                <h1>Task Manager</h1>
-                <p><i>Platform for managing project tasks.</i></p>
-            </div>
-            <div id="login-form">
-                <h1 id="login-form-title">Please sign in</h1>
-                <div class="login-form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="login-username" />
-                    <p id="username-validation-text" class="validation-error"></p>
-                </div>
-                <div class="login-form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="login-password" />
-                    <p id="password-validation-text" class="validation-error"></p>
-                </div>
-                <div class="login-form-group">
-                    <button id="sign-in-btn">Sign in</button>
-                    <span>New to Task Manager?</span>
-                    <span><a href="#">Create an account.</a></span>
-                </div>
-            </div>
+    <div id="login-container" class="show">
+      <div id="login-info-text">
+        <h1>Task Manager</h1>
+        <p><i>Platform for managing project tasks.</i></p>
+      </div>
+      <div id="login-form">
+        <h1 id="login-form-title">Please sign in</h1>
+        <div class="login-form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="login-username" />
+          <p id="username-validation-text" class="validation-error"></p>
+        </div>
+        <div class="login-form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="login-password" />
+          <p id="password-validation-text" class="validation-error"></p>
+        </div>
+        <div class="login-form-group">
+          <button id="sign-in-btn">Sign in</button>
+          <span>New to Task Manager?</span>
+          <span><a href="#">Create an account.</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- *****Register page***** -->
+
+    <div id="register" class="hide">
+      <h1>Sign Up</h1>
+      <p class="subtitle">It`s free and only takes a minute</p>
+
+      <div class="registerFields">
+        <div>
+          <label for="regFirstName">First Name</label>
+          <input type="text" name="regFirstName" class="regFirstName" />
+          <p class="firstName-validation-text validation-error"></p>
         </div>
 
-        <!-- *****Register page***** -->
-
-        <div id="register" class="hide">
-            <h1>Sign Up</h1>
-            <p>It`s free and only takes a minute</p>
-
-            <div class="registerFields">
-                <div>
-                    <label for="regFirstName">First Name</label>
-                    <input type="text" name="regFirstName" class="regFirstName" />
-                    <p class="firstName-validation-text validation-error"></p>
-                </div>
-
-                <div>
-                    <label for="regLastName">Last Name</label>
-                    <input type="text" name="regLastName" class="regLastName" />
-                    <p class="lastName-validation-text validation-error"></p>
-                </div>
-
-                <div>
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="regEmail" />
-                    <p class="email-validation-text validation-error"></p>
-                </div>
-
-                <div>
-                    <label for="mobileNumber">Mobile Number</label>
-                    <input type="text" name="mobileNumber" class="regMobileNumber" />
-                    <p class="phone-validation-text validation-error"></p>
-                </div>
-
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="regPassword" />
-                    <p class="register-password-validation validation-error"></p>
-                </div>
-
-                <div>
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" name="confirmPassword" class="confirmPassword" />
-                    <p class="confirm-password-validation validation-error"></p>
-                </div>
-            </div>
-
-            <button class="regBtn">Sign Up</button>
-            <p class="regText">
-                Already have an account? <span><a href="#">login here</a></span>
-            </p>
+        <div>
+          <label for="regLastName">Last Name</label>
+          <input type="text" name="regLastName" class="regLastName" />
+          <p class="lastName-validation-text validation-error"></p>
         </div>
 
-        <!-- ****Dashboard page**** -->
-
-        <div id="dashboard">
-            Welcome to Dashboard!
+        <div>
+          <label for="email">Email</label>
+          <input type="text" name="email" class="regEmail" />
+          <p class="email-validation-text validation-error"></p>
         </div>
 
-        <!-- *****Loading animations****** -->
-
-        <div class="spinner" id="login-spinner">
-            <div class="spinner-dot"></div>
-            <div class="spinner-dot"></div>
-            <div class="spinner-dot"></div>
-            <div class="spinner-dot"></div>
-            <div class="spinner-dot"></div>
-            <div class="spinner-dot"></div>
+        <div>
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="text" name="mobileNumber" class="regMobileNumber" />
+          <p class="phone-validation-text validation-error"></p>
         </div>
 
-        <script src="src/main.js"></script>
-        <script src="src/register.js"></script>
-    </body>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" class="regPassword" />
+          <p class="register-password-validation validation-error"></p>
+        </div>
+
+        <div>
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" name="confirmPassword" class="confirmPassword" />
+          <p class="confirm-password-validation validation-error"></p>
+        </div>
+
+        <div>
+          <button class="regBtn">Sign Up</button>
+          <p class="regText">
+            Already have an account? <span><a href="#">login here</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ****Dashboard page**** -->
+
+    <div id="dashboard">
+      Welcome to Dashboard!
+    </div>
+
+    <!-- *****Loading animations****** -->
+
+    <div class="spinner" id="login-spinner">
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+      <div class="spinner-dot"></div>
+    </div>
+
+    <script src="src/main.js"></script>
+    <script src="src/register.js"></script>
+  </body>
 </html>
