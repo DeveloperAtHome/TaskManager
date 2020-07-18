@@ -1,0 +1,16 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "isAsync": true,
+        "cmd": "taskkill /f /im node.exe"
+      },
+      {
+        "match": ".*",
+        "isAsync": true,
+        "cmd": "npm run start"
+      }
+    ]
+  }
+}

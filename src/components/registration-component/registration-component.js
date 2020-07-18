@@ -1,4 +1,4 @@
-class Register {
+class RegistrationComponent {
     user = {
         firstName: undefined,
         lastName: undefined,
@@ -13,9 +13,6 @@ class Register {
     }
 
     initApp = () => {
-        //Get login and register container
-        this.loginPage = document.querySelector("#login-container");
-        this.registerPage = document.querySelector("#register");
 
         //Get text validations for certain inputs
         this.firstNameValidationText = document.querySelector(".firstName-validation-text");
@@ -33,23 +30,14 @@ class Register {
         this.password = document.querySelector(".regPassword");
         this.confirmPassword = document.querySelector(".confirmPassword");
 
-        // Hide/show certain containers
-        document.querySelector("#login-container a").addEventListener("click", this.loginDiv);
-        document.querySelector("#register a").addEventListener("click", this.registerDiv);
-
         //Get Sign Up button
         document.querySelector(".regBtn").addEventListener("click", this.onSignUp);
+        document.querySelector("#loginLink").addEventListener('click', this.navigateToLogin)
     };
 
-    loginDiv = () => {
-        this.loginPage.classList.replace("show", "hide");
-        this.registerPage.classList.replace("hide", "show");
-    };
-
-    registerDiv = () => {
-        this.loginPage.classList.replace("hide", "show");
-        this.registerPage.classList.replace("show", "hide");
-    };
+    navigateToLogin = () => {
+        window.router.navigate('/login');
+    }
 
     isValidForm = () => {
         const firstNameRegex = /^[a-z\d]{5,8}$/i;
@@ -117,8 +105,9 @@ class Register {
 
         if (result) {
             console.log("it works!!");
+            this.navigateToLogin();
         }
     };
 }
 
-new Register();
+export default RegistrationComponent;

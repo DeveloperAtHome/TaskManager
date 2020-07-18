@@ -6,6 +6,12 @@ body {
     background-color: #c4cfcf;
 }
 
+route {
+    display: block;
+    width: 100vh;
+    height: 100wh;
+}
+
 /* **********Login page **********/
 
 a {
